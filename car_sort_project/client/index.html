@@ -1,48 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Moto Bene</title>
-    <link rel="stylesheet" href="">
-  </head>
-  <body>
-    <div ng-app="MotoBene">
-      <nav ng-controller="NavCtrl">
-          <a ng-if="!authorized()" href="/#/login">Login</a>
-          <a href ng-if="authorized()" ng-click="logout()">Logout</a>
-          <a href="/#/makes">Tickets</a>
-          <a href="/#/models">Habitats</a>
-          <a href="/#/reviews">Animals</a>
-      </nav>
-      <div ng-view></div>
-    </div>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Moto Bene</title>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="app/css/style.css">
+    </head>
+    <body>
+        <div ng-app="MotoBene">
+            <nav ng-controller="NavCtrl">
+                <a ng-if="!authorized()" href="/#/login">Login</a>
+                <a href ng-if="authorized()" ng-click="logout()">Logout</a>
+                <a href="/#/makes">Makes</a>
+                <a href="/#/models">Models</a>
+                <a href="/#/reviews">Reviews</a>
+            </nav>
+            <div ng-view></div>
+        </div>
 
+    <!-- Dependency Links -->
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
 
-    <script src="/app/app.js"></script>
-    <script src="/app/navCtrl.js"></script>
-
-    <script src="/app/landing/landing.config.js"></script>
-    <script src="/app/landing/landingCtrl.js"></script>
-
-    <script src="/app/auth/auth.config.js"></script>
-    <script src="/app/auth/authCtrl.js"></script>
-    <script src="/app/auth/authFactory.js"></script>
-
-    <script src="/app/makes/makes.config.js"></script>
-    <script src="/app/makes/makesCtrl.js"></script>
-    <script src="/app/makes/makeDetailCtrl.js"></script>
-
-    <script src="/app/models/models.config.js"></script>
-    <script src="/app/models/modelsCtrl.js"></script>
-    <script src="/app/models/modelDetailCtrl.js"></script>
-
-    <script src="/app/reviews/reviews.config.js"></script>
-    <script src="/app/reviews/reviewFormCtrl.js"></script>
-    <script src="/app/reviews/reviewsCtrl.js"></script>
-    <script src="/app/reviews/reviewDetailCtrl.js"></script>
-  </body>
-</html>
+    <!-- Application Links -->
+    <script src="app/app.js"></script>
+    <script src="app/app.config.js"></script>
