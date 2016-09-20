@@ -1,29 +1,29 @@
-// Create main Angular module
-var app = angular.module('YourApp', ['ngRoute'])
+'use strict'
 
-// Configure to use interpolation punctuation that differs from Django's
-// and add the CSRF token when communicating via XHR with Django
-angular.module('YourApp').config(
-[
-    '$interpolateProvider',
-    '$httpProvider',
-    '$routeProvider',
-    function($interpolateProvider, $httpProvider, $routeProvider) {
+angular.module('MotoBene', ['ngRoute', 'ngCookies'])
+  .constant('apiUrl', "http://localhost:8000");
 
-      $interpolateProvider.startSymbol('((');
-      $interpolateProvider.endSymbol('))');
+angular.module('MotoBene').factory('RootFactory', [
+    "$http", "apiUrl",
+    ($http, apiUrl) => {
+      let apiRoot = null;
+      let httpGet = $http.get(apiUrl);
+      let userCredentials = {};
 
-      $httpProvider.defaults.xsrfCookieName = 'csrftoken';
-      $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+      return {
+        getApiRoot () {
+          return httpGet.then(res => res.data)
+        }
+      }
+    }
+  ])
 
-      $routeProvider
-        .when('/auth', {
-          controller: 'MainController',
-          templateUrl: '/static/auth.html'
-        })
-        .when('/hello', {
-          controller: 'HelloController',
-          templateUrl: '/static/hello.html'
-        });
-  }
-]);
+  .filter('capitalize', () => {
+    return (thingToChange) => {
+      return thingToChange.charAt(0).toUpperCase() + thingToChange.slice(1)
+    }
+  });
+
+angular.module('MotoBene').run((AuthFactory) => {
+  AuthFactory.read();
+});
