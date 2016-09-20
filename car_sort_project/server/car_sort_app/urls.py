@@ -9,6 +9,8 @@ router.register(r'Review', views.ReviewView)
 router.register(r'User', views.UserView)
 
 urlpatterns = [
-    url(r'^login$', views.UserView, name='login'),
+    url(r'^login$', views.login_user, name='login'),
+    url(r'^register$', views.register_user, name=register'),
     url(r'^', include(router.urls)),
+
 ]
