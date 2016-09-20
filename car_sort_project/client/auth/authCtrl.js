@@ -1,53 +1,84 @@
-app.controller('MainController', function($scope, $http, $location) {
+angular.module('MotoBene')
+  .controller('LoginController', [
+    '$scope',
+    '$http',
+    '$location',
+    'RootFactory',
+    'AuthFactory',
+    'apiUrl',
 
-  $scope.user = {
-    username: "",
-    password: ""
-  };
+    function($scope, $http, $location, RootFactory, AuthFactory, apiUrl) {
 
-  $scope.register = function() {
-      $http({
-        url: "/register",
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        data: {
-          "username": $scope.user.username,
-          "password": $scope.user.password,
-        }
-      }).success(res => {
-        if (res.success === true) {
-            $location.path('/hello');
-        } else {
-            // Show dialog element telling user that registration failed
-        }
-      }).error(() => {
-        // Show dialog element telling user that registration failed
-      });
-  };
+      // Default values for scope variables
+      $scope.user = {
+        username: "",
+        password: ""
+      };
+      $scope.root = null;
 
+      $scope.register = function() {
+        $http({
+          url: `${apiUrl}/register`,
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          data: {
+            "username": $scope.user.username,
+            "password": $scope.user.password,
+          }
+        }).success(res => {
+          if (res.success) {
+            /*
+            Registration was successful. The register_user method in the Django
+            application also handles login, so the client can store credentials
+            for use in requests to API that require permissions
+             */
+            RootFactory.credentials({
+              username: $scope.user.username,
+              password: $scope.user.password
+            });
 
-  $scope.login = function() {
-      $http({
-        url: "/login",
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        data: {
-          "username": $scope.user.username,
-          "password": $scope.user.password
-        }
-      }).success(res => {
-        if (res.success === true) {
-            $location.path('/hello');
-        } else {
-            // Show dialog element telling user that registration failed
-        }
-      }).error(() => {
-        // Show dialog element telling user that registration failed
-      });
-  };
+            $location.path('/');
+          }
+        }).error(console.error);
+      };
 
-});
+      /*
+        Post the user-provided credentials to API
+       */
+      $scope.login = function() {
+        $http({
+          url: `${apiUrl}/login`,
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          data: {
+            "username": $scope.user.username,
+            "password": $scope.user.password
+          }
+        }).then(
+          res => {
+            console.log("res", res);
+            if (res.data !== null) {
+              /*
+              Login was successful, store credentials for use in requests
+              to API that require permissions
+               */
+              AuthFactory.credentials({
+                username: $scope.user.username,
+                password: $scope.user.password
+              });
+
+              // Redirect to ticket list on successful login
+              $location.path('/tickets/');
+            } else {
+              console.error("Invalid username or password");
+            }
+          },
+          err => console.error
+        );
+      };
+    }
+]);
