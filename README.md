@@ -1,4 +1,4 @@
-# **MotoBene**
+# **Moto Bene**
 ###### (c) 2016 by Damon Romano. MIT License
 ___
 *Moto Bene* is my final capstone project for the six-month, full-time, full-stack, Nashville Software School developer bootcamp.
@@ -15,7 +15,7 @@ It's a simple app; one that I hope to build out further as time permits. It's a 
 Have suggestions for improvement? Questions?  Comments? Complaints?
 [Hit me!](https://github.com/DamonRomano)
 
-## Biuld
+## Build
 ___
 #### Back End
 I built *Moto Bene's* back end using the
@@ -26,9 +26,3 @@ I built the app's front end on
 [AngularJS 1.5.8](https://code.angularjs.org/1.5.8/docs/api)
 and styled it with [Bootstrap 3.3.7](http://getbootstrap.com/).
 # ***Enjoy!***
-
-# **Bona Terra**
-My capstone project for the first three months (the front-end portion) of my six-month, intensive, full-time, full-stack, developer bootcamp at Nashville Software School, *Bona Terra* is built using HTML, CSS/Bootstrap, and AngularJS. It consumes the Weather Underground API and uses HTML5 geolocation.
-
-*Bona Terra* is a minimalist, text-based, adventure...weather app. A simple, linear story exposes to the reader his current local weather conditions and a three-day forecast in a lighthearted, slightly surreal way. There may be obscure pop-culture references to the 1980s.
-##### Enjoy!
