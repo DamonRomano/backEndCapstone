@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Moto Bene</title>
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="app/css/style.css">
-    </head>
-    <body>
-        <div ng-app="MotoBene">
-            <nav>
-                <a href="/#/landing">Landing</a>
-                <a href="/#/makes">Makes</a>
-                <a href="/#/models">Models</a>
-                <a href="/#/reviews">Reviews</a>
-            </nav>
-            <div ng-view></div>
-        </div>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Moto Bene</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div ng-app="MotoBene">
+        <nav>
+            <a href="/#/">Home</a>
+            <a href="/#/createCar">Add a Car to Our Database</a>
+            <a href="/#/showCars">Sweet Database of Cars</a>
+            <a href="/#/writeReview">Review Your Car</a>
+        </nav>
+        <div ng-view></div>
+    </div>
 
     <!-- Dependency Links -->
     <script src="bower_components/angular/angular.min.js"></script>

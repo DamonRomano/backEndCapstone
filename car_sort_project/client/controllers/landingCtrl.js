@@ -1,4 +1,4 @@
 angular.module('MotoBene')
-.controller('landingCtrl', function($scope) {
+    .controller('landingCtrl', function($scope) {
 
-})
+    })

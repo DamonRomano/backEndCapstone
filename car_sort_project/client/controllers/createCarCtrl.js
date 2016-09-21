@@ -1,4 +1,4 @@
 angular.module('MotoBene')
-.controller('createCarCtrl', function($scope) {
+    .controller('createCarCtrl', function($scope) {
 
-})
+    })

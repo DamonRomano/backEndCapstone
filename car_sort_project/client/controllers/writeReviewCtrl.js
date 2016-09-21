@@ -1,4 +1,4 @@
 angular.module('MotoBene')
-.controller('writeReviewCtrl', function($scope) {
+    .controller('writeReviewCtrl', function($scope) {
 
-})
+    })

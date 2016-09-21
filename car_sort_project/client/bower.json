@@ -1,22 +1,22 @@
 {
-  "name": "client",
-  "homepage": "https://github.com/DamonRomano/backEndCapstone",
-  "authors": [
-    "Damon Romano <rdromano@mac.com>"
-  ],
-  "description": "",
-  "main": "",
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "angular-bootstrap": "^2.1.3",
-    "angular-route": "^1.5.8",
-    "bootstrap": "^3.3.7"
-  }
+    "name": "client",
+    "homepage": "https://github.com/DamonRomano/backEndCapstone",
+    "authors": [
+        "Damon Romano <rdromano@mac.com>"
+    ],
+    "description": "",
+    "main": "",
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular-bootstrap": "^2.1.3",
+        "angular-route": "^1.5.8",
+        "bootstrap": "^3.3.7"
+    }
 }
