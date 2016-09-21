@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('MotoBene', ['ngRoute', 'ngCookies'])
+angular.module('MotoBene', ['ngRoute'])
     .constant('apiUrl', "http://localhost:8000");
 
 angular.module('MotoBene').factory('RootFactory', [
@@ -8,7 +8,6 @@ angular.module('MotoBene').factory('RootFactory', [
     ($http, apiUrl) => {
         let apiRoot = null;
         let httpGet = $http.get(apiUrl);
-        let userCredentials = {};
 
         return {
             getApiRoot() {
@@ -22,8 +21,4 @@ angular.module('MotoBene').factory('RootFactory', [
     return (thingToChange) => {
         return thingToChange.charAt(0).toUpperCase() + thingToChange.slice(1)
     }
-});
-
-angular.module('MotoBene').run((AuthFactory) => {
-    AuthFactory.read();
 });
