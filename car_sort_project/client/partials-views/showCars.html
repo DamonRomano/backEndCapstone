@@ -1,5 +1,23 @@
 <h1>{{title}}</h1>
 
 <table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Displacement</th>
+        <th>Cylinders</th>
+        <th>Horsepower</th>
+        <th>Torque</th>
+        <th>0-60 (in seconds)</th>
+    </tr>
+    <tr ng-repeat='car in showCars'>
+        <td>{{car.make.name}}</td>
+        <td>{{car.model}}</td>
+        <td>{{car.engine_displacement}}</td>
+        <td>{{car.engine_number_of_cylinders}}</td>
+        <td>{{car.horsepower}}</td>
+        <td>{{car.torque}}</td>
+        <td>{{car.zero_to_sixty_acceleration_time}}</td>
+    </tr>
 
 </table>
