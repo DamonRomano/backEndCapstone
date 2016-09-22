@@ -2,14 +2,16 @@
 
 <h3>Filter The Tables By:</h3>
 <p>
-    HP at least <input ng-modal='text'>
+    HP at least <input ng-model='hpText'>
 </p>
 <p>
-    TQ at least <input ng-modal='text'>
+    TQ at least <input ng-model='tqText'>
 </p>
 <p>
-    0 - 60mph <input ng-modal='text'> seconds or less.
+    0 - 60 mph <input ng-model='accelText'> seconds or less.
 </p>
+
+</div>
 <table class="table table-bordered table-responsive table-hover">
     <tr>
         <th>Make</th>
@@ -20,7 +22,7 @@
         <th>Torque</th>
         <th>0-60 (in seconds)</th>
     </tr>
-    <tr ng-repeat='car in showCars'>
+    <tr ng-repeat='car in showCars | pick: hpExpr | pick: tqExpr | pick: accelExpr'>
         <td>{{car.make.name}}</td>
         <td>{{car.model}}</td>
         <td>{{car.engine_displacement}}</td>
