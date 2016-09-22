@@ -5,7 +5,7 @@ angular.module('MotoBene')
         'RootFactory',
         '$timeout',
         function($scope, $http, RootFactory, $timeout) {
-            $scope.title = "I'm the page where you can add your own car to the database."
+            $scope.title = "Help improve the community: Write a review of a car you've driven."
 
             RootFactory.getApiRoot()
                 .then(root => {
