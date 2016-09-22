@@ -15,7 +15,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         )
 
 class CarMakeSerializer(serializers.HyperlinkedModelSerializer):
-    models = CarModelSerializer(many=True)
+    # models = CarModelSerializer(many=True)
     class Meta:
         model = CarMake
         fields = ('name', 'models')
