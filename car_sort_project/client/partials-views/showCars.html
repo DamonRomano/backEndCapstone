@@ -14,6 +14,7 @@
 </div>
 <table class="table table-bordered table-responsive table-hover">
     <tr>
+        <th>Year</th>
         <th>Make</th>
         <th>Model</th>
         <th>Displacement</th>
@@ -23,6 +24,7 @@
         <th>0-60 (in seconds)</th>
     </tr>
     <tr ng-repeat='car in showCars | pick: hpExpr | pick: tqExpr | pick: accelExpr'>
+        <td>{{car.year}}</td>
         <td>{{car.make.name}}</td>
         <td>{{car.model}}</td>
         <td>{{car.engine_displacement}}</td>
