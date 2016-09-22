@@ -1,5 +1,40 @@
-<h1>{{title}}</h1>
+<h2>{{title}}</h2>
 
-<table class="table table-bordered table-responsive table-hover">
+<h3>Filter The Tables By:</h3>
+<p>
+    HP at least <input ng-model='hpText'>
+</p>
+<p>
+    TQ at least <input ng-model='tqText'>
+</p>
+<p>
+    0 - 60 mph <input ng-model='accelText'> seconds or less.
+</p>
 
+</div>
+<table id="showCarsTable" class="table table-bordered table-responsive table-hover tablesorter">
+    <thead>
+        <tr>
+            <th>Year</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Displacement</th>
+            <th>Cylinders</th>
+            <th>Horsepower</th>
+            <th>Torque</th>
+            <th>0-60 (in seconds)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat='car in showCars | pick: hpExpr | pick: tqExpr | pick: accelExpr'>
+            <td>{{car.year}}</td>
+            <td>{{car.make.name}}</td>
+            <td>{{car.model}}</td>
+            <td>{{car.engine_displacement}}</td>
+            <td>{{car.engine_number_of_cylinders}}</td>
+            <td>{{car.horsepower}}</td>
+            <td>{{car.torque}}</td>
+            <td>{{car.zero_to_sixty_acceleration_time}}</td>
+        </tr>
+    </tbody>
 </table>

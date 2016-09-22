@@ -14,26 +14,27 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
             'last_name'
         )
 
-class CarModelSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = CarModel
-        fields = (
-            'year',
-            'make',
-            'model',
-            'engine_displacement',
-            'engine_number_of_cylinders',
-            'horsepower',
-            'torque',
-            'zero_to_sixty_acceleration_time',
-            'url'
-        )
-
 class CarMakeSerializer(serializers.HyperlinkedModelSerializer):
     # models = CarModelSerializer(many=True)
     class Meta:
         model = CarMake
         fields = ('name', 'models')
+
+class CarModelSerializer(serializers.HyperlinkedModelSerializer):
+    make = CarMakeSerializer(read_only=True)
+    class Meta:
+        model = CarModel
+        fields = (
+        'year',
+        'make',
+        'model',
+        'engine_displacement',
+        'engine_number_of_cylinders',
+        'horsepower',
+        'torque',
+        'zero_to_sixty_acceleration_time',
+        'url'
+        )
 
 class ReviewSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
