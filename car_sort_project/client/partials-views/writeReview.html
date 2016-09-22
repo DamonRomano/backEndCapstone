@@ -1,1 +1,14 @@
-<h1>{{title}}</h1>
+<h2>{{title}}</h2>
+        <div class="col-sm-offset-2 col-sm-8">
+            <div ng-controller="writeReviewCtrl">
+                <form novalidate class="form" action="index.html" method="post">
+                    <div class="form-group">
+                        <label for="inputMake">Review: </label>
+                        <input type="text" class="form-control" id="inputMake" placeholder="Write your review here.">
+                        <!-- ng-model="car.make" value=""> -->
+                        <button ng-click="saveReview()" type="submit" class="form-control btn btn-default">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>

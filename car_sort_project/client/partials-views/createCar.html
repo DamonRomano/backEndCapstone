@@ -1,57 +1,54 @@
 <h2>{{title}}</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-6">
+            <div ng-controller="createCarCtrl">
+                <form novalidate class="form" action="index.html" method="post">
+                    <div class="form-group">
+                        <label for="inputMake">Make: </label>
+                        <input type="text" class="form-control" id="inputMake" placeholder="Make">
+                        <!-- ng-model="car.make" value=""> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="inputModel">Model: </label>
+                        <input type="text" class="form-control" id="inputModel" placeholder="Model">
+                        <!-- ng-model="car.make" value=""> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDisplacement">Displacement: </label>
+                        <input type="text" class="form-control" id="inputDisplacement" placeholder="Displacement">
+                        <!-- ng-model="car.make" value=""> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCylinders">Cylinders: </label>
+                        <input type="text" class="form-control" id="inputCylinders" placeholder="Cylinders">
+                        <!-- ng-model="car.make" value=""> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="inputHorsepower">Horsepower: </label>
+                        <input type="number" class="form-control" id="inputHorsepower" placeholder="Horsepower">
+                        <!-- ng-model="car.make" value=""> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTorque">Torque: </label>
+                        <input type="number" class="form-control" id="inputTorque" placeholder="Torque">
+                        <!-- ng-model="car.make" value=""> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAcceleration">Acceleration: </label>
+                        <input type="text" class="form-control" id="inputAcceleration" placeholder="Acceleration">
+                        <!-- ng-model="car.make" value=""> -->
+                    </div>
 
-<div ng-controller="createCarCtrl">
-    <form novalidate class="form" action="index.html" method="post">
 
-        <div class="form-group">
-            <label for="inputMake">Make: </label>
-            <input type="text" class="form-control" id="inputMake" placeholder="Make">
-            <!-- ng-model="car.make" value=""> -->
+                    <!-- Model: <input type="text" ng-model="car.model" value=""> Engine Displacement (in Liters): <input type="text" ng-model="car.engine_displacement" value=""> Number of Cylinders in Engine: <input type="text" ng-model="car.engine_number_of_cylinders"
+                        value=""> Horsepower: <input type="text" ng-model="car.horsepower" value=""> Torque: <input type="text" ng-model="car.torque" value=""> 0 - 60 Time (in seconds, e.g.- 6.3): <input type="text" ng-model="car.zero_to_sixty_acceleration_time"
+                        value=""> -->
+
+                    <button ng-click="saveCar()" type="submit" class="form-control btn btn-default">Submit</button>
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="inputModel">Model: </label>
-            <input type="text" class="form-control" id="inputModel" placeholder="Model">
-            <!-- ng-model="car.make" value=""> -->
-        </div>
-        <div class="form-group">
-            <label for="inputDisplacement">Displacement: </label>
-            <input type="text" class="form-control" id="inputDisplacement" placeholder="Displacement">
-            <!-- ng-model="car.make" value=""> -->
-        </div>
-        <div class="form-group">
-            <label for="inputCylinders">Cylinders: </label>
-            <input type="text" class="form-control" id="inputCylinders" placeholder="Cylinders">
-            <!-- ng-model="car.make" value=""> -->
-        </div>
-        <div class="form-group">
-            <label for="inputHorsepower">Horsepower: </label>
-            <input type="number" class="form-control" id="inputHorsepower" placeholder="Horsepower">
-            <!-- ng-model="car.make" value=""> -->
-        </div>
-        <div class="form-group">
-            <label for="inputTorque">Torque: </label>
-            <input type="number" class="form-control" id="inputTorque" placeholder="Torque"> 
-            <!-- ng-model="car.make" value=""> -->
-        </div>
-        <div class="form-group">
-            <label for="inputAcceleration">Acceleration: </label>
-            <input type="text" class="form-control" id="inputAcceleration" placeholder="Acceleration">
-            <!-- ng-model="car.make" value=""> -->
-        </div>
-
-
-        Model: <input type="text" ng-model="car.model" value="">
-
-        Engine Displacement (in Liters): <input type="text" ng-model="car.engine_displacement" value="">
-
-        Number of Cylinders in Engine: <input type="text" ng-model="car.engine_number_of_cylinders" value="">
-
-        Horsepower: <input type="text" ng-model="car.horsepower" value="">
-
-        Torque: <input type="text" ng-model="car.torque" value="">
-
-        0 - 60 Time (in seconds, e.g.- 6.3): <input type="text" ng-model="car.zero_to_sixty_acceleration_time" value="">
-
-        <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+        <div class="col-sm-4"></div>
+    </div>
 </div>
