@@ -26,6 +26,17 @@ angular.module('MotoBene')
                         $http.get(root.CarModel)
                             .then(res => {
                                 $scope.showCars = res.data
+                                // $(function(){
+                                //   $("#showCarsTable").tablesorter({
+                                //     	theme : 'grey',
+                                //     	sortList : [[1,0]],
+                                //         headerTemplate : '{content}{icon}',
+                                //         widgets : ["columns"],
+                                //     	widgetOptions : {
+                                //           columns : [ "primary" ]
+                                //     	}
+                                //     });
+                                // });
                             });
                         $timeout();
                     }
