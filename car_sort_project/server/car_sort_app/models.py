@@ -23,7 +23,7 @@ class CarModel(models.Model):
     horsepower = models.IntegerField(default=0, blank=True)
     torque = models.IntegerField(default=0, blank=True)
     zero_to_sixty_acceleration_time = models.DecimalField(
-        max_digits=2,
+        max_digits=3,
         decimal_places=1,
         default=0.0
     )

@@ -26,7 +26,6 @@ angular.module('MotoBene')
                         $http.get(root.CarModel)
                             .then(res => {
                                 $scope.showCars = res.data
-                                console.log("I am on fire.", $scope.showCars);
                                 // $(function(){
                                 //   $("#showCarsTable").tablesorter({
                                 //     	theme : 'grey',
