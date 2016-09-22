@@ -15,7 +15,7 @@ class CarModel(models.Model):
     make = models.ForeignKey(CarMake, related_name='models')
     model = models.CharField(max_length=100, default='')
     engine_displacement = models.DecimalField(
-        max_digits=2,
+        max_digits=3,
         decimal_places=1,
         default=0.0
     )
