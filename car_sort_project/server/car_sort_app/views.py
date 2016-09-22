@@ -26,6 +26,23 @@ class ModelView(viewsets.ModelViewSet):
     queryset = CarModel.objects.all()
     serializer_class = CarModelSerializer
 
+    def create(self, request):
+        new_make = Make.objects.create(name=request.data['make'])
+
+        new_make.save()
+
+        new_model = Model.objects.create(
+            year=request.data['year'],
+            model=request.data['model'],
+            engine_displacement=request.data['engine_displacement'],
+            engine_number_of_cylinders=request.data['engine_number_of_cylinders'],
+            horsepower=request.data['horsepower'],
+            torque=request.data['torque'],
+            zero_to_sixty_acceleration_time=request.data['engine_number_of_cylinders'],
+            make = new_make
+
+        new_model.save()
+
 class ReviewView(viewsets.ModelViewSet):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
