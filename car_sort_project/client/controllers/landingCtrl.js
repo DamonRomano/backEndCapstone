@@ -5,5 +5,5 @@ angular.module('MotoBene')
         'RootFactory',
         '$timeout',
         function($scope, $http, RootFactory, $timeout) {
-            $scope.title = "Welome to Moto Bene! We're a car finder for car enthusiasts!"
+            $scope.title = "A car finder for car enthusiasts!"
         }])
