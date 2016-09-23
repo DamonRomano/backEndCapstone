@@ -1,14 +1,32 @@
 <h2>{{title}}</h2>
-        <div class="col-sm-offset-2 col-sm-8">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-6">
             <div ng-controller="writeReviewCtrl">
-                <form novalidate class="form" action="index.html" method="post">
-                    <div class="form-group">
-                        <label for="inputMake">Write Your Review: </label>
-                        <input type="textarea" class="form-control input-lg" id="inputMake" placeholder="Write your review here.">
-                        <!-- ng-model="car.make" value=""> -->
-                        <button ng-click="saveReview()" type="submit" class="form-control btn btn-default">Submit</button>
-                    </div>
-                </form>
+                <div class="form-group">
+                    <label for="inputMake">Make: </label>
+                    <select class="form-control" id="inputMake" ng-options="make.name for make in showMakes" ng-model="make">
+                        <option value='' selected>-- Make --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputModel">Model: </label>
+                    <select class="form-control" id="inputModel" ng-options="make.name for make in showModels" ng-model="make">
+                        <option value='' selected>-- Model --</option>
+                    </select>
+                </div>
+
+                <select class="form-control" id="inputMake" ng-options="make.name for make in showMakes" ng-model="make">
+                        <option value='' selected>-- Make --</option>
+                    </select>
+                <label for="inputModel">Model: </label>
+                <select class="form-control" id="inputModel" ng-options="make.name for make in showModels" ng-model="make">
+                        <option value='' selected>-- Model --</option>
+                    </select>
+
+                <button ng-click="saveReview()" type="button" class="btn btn-default">Save Your Review</button>
             </div>
         </div>
-        <div class="col-sm-4"></div>
+    </div>
+</div>
+</div>
