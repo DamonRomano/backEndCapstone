@@ -32,7 +32,8 @@ angular.module('MotoBene')
                     year: $scope.year,
                     make: $scope.make.id,
                     model: $scope.model,
-                    engine_displacement: $scope.engine_displacement, engine_number_of_cylinders: $scope.engine_number_of_cylinders,
+                    engine_displacement: $scope.engine_displacement,
+                    engine_number_of_cylinders: $scope.engine_number_of_cylinders,
                     horsepower: $scope.horsepower,
                     torque: $scope.torque,
                     zero_to_sixty_acceleration_time: $scope.zero_to_sixty_acceleration_time
