@@ -4,6 +4,8 @@ angular.module('MotoBene')
         '$http',
         'RootFactory',
         '$timeout',
+        'apiUrl',
+        '$location',
         function($scope, $http, RootFactory, $timeout, apiUrl, $location) {
             $scope.title = "Add a boss ride to our sweet database."
 
@@ -18,29 +20,26 @@ angular.module('MotoBene')
 
             RootFactory.getApiRoot()
                 .then(root => {
-                        $http.get(`${root.CarModel}`)
+                        $http.get(`${root.CarMake}`)
                             .then(res => {
-                                $scope.showCars = res.data
+                                $scope.showMakes = res.data
                             });
                         $timeout()
                     }
                 )
-            $scope.saveCar = function(year, make, model, engine_displacement, engine_number_of_cylinders, horsepower, torque, zero_to_sixty_acceleration_time){
-                $http.post('http://localhost:8000/CarModel/', {
-                    year: year,
-                    make: make,
-                    model: model,
-                    engine_displacement: engine_displacement, engine_number_of_cylinders: engine_number_of_cylinders,
-                    horsepower: horsepower,
-                    torque: torque,
-                    zero_to_sixty_acceleration_time: zero_to_sixty_acceleration_time
+            $scope.saveCar = function(){
+                $http.post(apiUrl + '/CarModel/', {
+                    year: $scope.year,
+                    make: $scope.make.id,
+                    model: $scope.model,
+                    engine_displacement: $scope.engine_displacement, engine_number_of_cylinders: $scope.engine_number_of_cylinders,
+                    horsepower: $scope.horsepower,
+                    torque: $scope.torque,
+                    zero_to_sixty_acceleration_time: $scope.zero_to_sixty_acceleration_time
                 })
-                    .then(res => {
-                        console.log(res.data);
-                        // $scope.showCars
-
-                        // $location.path('/showCars')
-                    })
+                .then(res => {
+                    $location.path('/showCars')
+                })
 
             }
         }]);

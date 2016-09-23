@@ -4,20 +4,30 @@ angular.module('MotoBene')
         '$http',
         'RootFactory',
         '$timeout',
-        function($scope, $http, RootFactory, $timeout) {
-            $scope.title = "Here, users can write and submit reviews of cars they've driven."
+        'apiUrl',
+        '$location',
+        function($scope, $http, RootFactory, $timeout, apiUrl, $location) {
+            $scope.title = "Got a wicked ride?  Write a gnarly review."
+
+            $scope
 
             // $scope.saveReview = function()
 
             RootFactory.getApiRoot()
                 .then(
                     root => {
-                        $http.get(root.Review)
+                        $http.get(`${root.Review}`)
                             .then(res => {
-                                $scope.Review = res.data
+                                $scope.showReviews = res.data
                             });
                         $timeout();
                     }
                 )
+            $scope.saveReview = function(){
+                $http.post(apiUrl + '/Review/', {
+                    year: $scope.year,
+                    make
+                })
+            }
         }
     ]);
