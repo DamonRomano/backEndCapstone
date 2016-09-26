@@ -25,7 +25,7 @@ SECRET_KEY = '6_j%4ua2b0o*ucz6jg2*z3c6^uam00-2s6&k$mif8bypbt7b-)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.damonromano.com']
 
 
 # Application definition
