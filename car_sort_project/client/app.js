@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('MotoBene', ['ngRoute', 'angular.filter'])
-    .constant('apiUrl', "http://localhost:8000");
+    .constant('apiUrl', "http://damonromano.com:8000");
 
 angular.module('MotoBene').factory('RootFactory', [
     "$http", "apiUrl",
