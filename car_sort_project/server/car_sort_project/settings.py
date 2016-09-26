@@ -53,12 +53,19 @@ MIDDLEWARE = [
 ]
 
 # CORS ORIGIN must be set False prior to deployment for security
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = False
 ROOT_URLCONF = 'car_sort_project.urls'
 # WHITELIST should be changed to depolyed site url prior to deployment
 CORS_ORIGIN_WHITELIST = (
-    'localhost:8080'
+    'localhost:8080',
+    'damonromano.com'
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    )
+}
 
 TEMPLATES = [
     {

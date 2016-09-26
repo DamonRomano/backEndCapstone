@@ -12,4 +12,5 @@ urlpatterns = [
     # url(r'^login$', views.login_user, name='login'),
     # url(r'^register$', views.register_user, name='register'),
     url(r'^', include(router.urls)),
+    url(r'api-auth/', include('rest_framework.urls'))
 ]
