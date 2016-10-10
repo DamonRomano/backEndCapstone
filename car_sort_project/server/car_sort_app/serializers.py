@@ -3,22 +3,22 @@ from django.contrib.auth.models import User
 from car_sort_app.models import *
 
 # Turns Python models into JSON and vice versa.
-# class UserSerializer(serializers.HyperlinkedModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = (
-#             'id',
-#             'url',
-#             'username',
-#             'first_name',
-#             'last_name'
-#         )
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = (
+            'id',
+            'url',
+            'username',
+            'first_name',
+            'last_name'
+        )
 
 class CarMakeSerializer(serializers.HyperlinkedModelSerializer):
     # models = CarModelSerializer(many=True)
     class Meta:
         model = CarMake
-        fields = ('url', 'id', 'name', 'models')
+        fields = ('name', 'models')
 
 class CarModelSerializer(serializers.HyperlinkedModelSerializer):
     make = CarMakeSerializer(read_only=True)
