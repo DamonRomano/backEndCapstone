@@ -17,5 +17,13 @@ angular.module('MotoBene')
                 controller: 'writeReviewCtrl',
                 templateUrl: 'partials-views/writeReview.html'
             })
+            .when('/login', {
+                controller: 'authCtrl',
+                templateUrl: 'partials-views/login.html'
+            })
+            .when('/register', {
+                controller: 'authCtrl',
+                templateUrl: 'partials-views/login.html'
+            })
             .otherwise({redirectTo: '/'})
     }])
